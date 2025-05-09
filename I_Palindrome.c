@@ -1,5 +1,7 @@
 #include<stdio.h>
 #include<string.h>
+#include <stdlib.h>
+
 int main()
 {
     char a[1001];
@@ -23,11 +25,27 @@ int main()
 
     if(count==0)
     {
+        printf("%s\n",a);
         printf("YES");
     }
     else
     {
-        printf("NO");
+        int num = atoi(a);
+        int n=0, count = 0;
+
+        while (n==0)
+        {
+            n = num%10;
+            num/=10;
+            count++;
+        }
+
+        for(int i=((ln-1)-(count-1)); i>=0; i--)
+        {
+            printf("%c",a[i]);
+        }
+        
+        printf("\nNO");
     }
 
     return 0;
