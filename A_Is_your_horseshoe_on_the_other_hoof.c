@@ -29,8 +29,7 @@ int main()
     else if (count==3)
     {
         printf("2");
-    }
-    
+    } 
     else
     {
         printf("%d",count);
