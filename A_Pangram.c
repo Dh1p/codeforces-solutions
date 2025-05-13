@@ -1,52 +1,47 @@
 /**
  *     DHIP
-**/
-     
-#include<stdio.h>
+ **/
+
+#include <stdio.h>
+#include <ctype.h>
 int main()
 {
     int t;
-    int p=0,a=0,n=0,g=0,r=0,m=0;
-    char arr[101];
-    scanf("%d",&t);
-    scanf("%s",arr);
+    scanf("%d", &t);
+    if(t<26)
+    {
+        printf("NO\n");
+        return 0;
+    }
+
+    char a[101];
+    scanf("%s", a);
 
     for(int i=0; i<t; i++)
     {
-        if(arr[i]=='p')
+        a[i] = tolower(a[i]);
+    }
+
+    //printf("%s",a);
+
+    int fre[26]={0};
+
+    for(int i=0; i<t; i++)
+    {
+        char temp = a[i]-'a';
+        //printf("%d\n",temp);
+        fre[temp]++;
+    }
+
+    for(int i=0; i<26; i++)
+    {
+        if(fre[i]==0)
         {
-            p++;
-        }
-        else if(arr[i]=='a')
-        {
-            a++;
-        }
-        else if(arr[i]=='n')
-        {
-            n++;
-        }
-        else if(arr[i]=='g')
-        {
-            g++;
-        }
-        else if(arr[i]=='r')
-        {
-            r++;
-        }
-        else if(arr[i]=='m')
-        {
-            m++;
+            printf("NO\n");
+            return 0;
         }
     }
 
-    if(p>0 && a>0 && n>0 && g>0 && r>0 && m>0)
-    {
-        printf("YES\n");
-    }
-    else
-    {
-        printf("NO\n");
-    }
-
+    printf("YES\n");
     return 0;
 }
