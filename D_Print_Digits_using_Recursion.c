@@ -41,3 +41,43 @@ int main()
     }
     return 0;
 }
+
+/**
+ *     DHIP
+**/
+     
+// #include<stdio.h>
+
+// void print(int a)
+// {
+//     if(a==0)
+//     {
+//         return;
+//     }
+//     print(a/10);
+
+//     int last = a%10;
+
+//     printf("%d ",last);
+
+    
+// }
+
+// int main()
+// {
+//     int n,a;
+//     scanf("%d",&n);
+
+//     for(int i=0; i<n; i++)
+//     {
+//         scanf("%d",&a);
+//         if(a==0)
+//         {
+//             printf("0");
+//         }
+
+//         print(a);
+//         printf("\n");
+//     }
+//     return 0;
+// }
