@@ -9,9 +9,8 @@ int main()
 {
     string a,b;
     getline(cin,a);
-    cin.ignore();
     getline(cin,b);
 
-    cout << a << " " << b;
+    
     return 0;
 }
