@@ -10,6 +10,19 @@ int main()
     int n;
     cin >>n;
 
-    for(int i=0;)
+    while(n--)
+    {
+        string a;
+        cin >>a;
+
+        if(a=="YES" || a=="YEs" || a=="Yes" || a =="yes" || a=="yES" || a=="yeS" || a=="YeS" || a=="yEs")
+        {
+            cout << "YES" <<endl;
+        }
+        else
+        {
+            cout << "NO" << endl;
+        }
+    }
     return 0;
 }
