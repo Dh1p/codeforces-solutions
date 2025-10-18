@@ -9,9 +9,13 @@ int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
-    int s,r1,r2;
-    cin >>r1>>s;
-    r2=2*s-r1;
-    cout<<r2<<"\n";
+    int n,p;
+    cin >>n>>p;
+    for(int i=0; i<n; i++)
+    {
+        string s;
+        cin >> s;
+    }
+    cout << p << "\n";
     return 0;
 }
