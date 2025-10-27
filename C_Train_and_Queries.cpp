@@ -14,39 +14,45 @@ int main()
     
     while(t--)
     {
-
         int n,k;
         cin>>n>>k;
-        vector<int>v(n);
-        for(int i=0; i<n; i++)
+        map<int,set<int>>mp;
+        for(int i=1; i<=n; i++)
         {
-            cin>>v[i];
+            int x;
+            cin>>x;
+            mp[x].insert(i);
         }
-
-        for(int i=0; i<k; i++)
+        // for(auto [x,y]:mp)
+        // {
+        //     cout << x <<"->";
+        //     for(auto val : y)
+        //     {
+        //         cout << val << " ";
+        //     }
+        //     cout <<"\n";
+        // }
+        for(int i=1; i<=k; i++)
         {
-            int a,b;
-            cin>>a>>b;
-            int x=0,y=n-1;
-            int countx=0,county=0;
-            while(x<y)
+            int l,r;
+            cin>>l>>r;
+            if(mp.find(l)==mp.end()||mp.find(r)==mp.end())
             {
-                if(v[x]!=a){
-                    x++;
-                    countx++;
-                }
-                if(v[y]!=b){
-                    y--;
-                    county++;
-                }
-            }
-            if(countx+county==n-1)
-            {
-                cout <<"NO\n";
+                cout<<"NO\n";
             }
             else
             {
-                cout << "YES\n";
+                int startidx,endidx;
+                startidx = *mp[l].begin();
+                endidx = *mp[r].rbegin();
+                if(startidx<endidx)
+                {
+                    cout << "YES\n";
+                }
+                else
+                {
+                    cout << "NO\n";
+                }
             }
         }
     }
